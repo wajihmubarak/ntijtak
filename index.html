@@ -2,2967 +2,689 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>نادي الدوم الرياضي الثقافي</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>نتيجة الشهادة السودانية 2026</title>
 
     <style>
-        /* =====================================================
-           ROOT
-        ===================================================== */
-
-        :root {
-            --blue: #0757a8;
-            --blue-dark: #04366b;
-            --blue-light: #1688e8;
-            --cyan: #08bfe8;
-            --red: #e63946;
-
-            --bg: #f4f8fc;
-            --white: #ffffff;
-            --dark: #071525;
-            --text: #34445a;
-            --muted: #718096;
-
-            --border: rgba(7, 87, 168, .10);
-
-            --shadow: 0 15px 45px rgba(4, 54, 107, .10);
-            --shadow-lg: 0 25px 70px rgba(4, 54, 107, .16);
-
-            --radius: 24px;
-        }
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Cairo", sans-serif;
-            background: var(--bg);
-            color: var(--text);
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Tahoma, sans-serif;
             overflow-x: hidden;
         }
 
-        body.locked {
-            overflow: hidden;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
+        /* حاوية العرض */
         .container {
-            width: min(1180px, calc(100% - 32px));
-            margin: auto;
-        }
-
-        /* =====================================================
-           LOADING / INTRO
-        ===================================================== */
-
-        .intro {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background:
-                radial-gradient(circle at 50% 35%, rgba(22,136,232,.18), transparent 32%),
-                linear-gradient(145deg, #031b36, #0757a8 55%, #04366b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition:
-                opacity .7s ease,
-                visibility .7s ease;
-        }
-
-        .intro.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .intro-content {
-            text-align: center;
-            color: white;
-            animation: introIn 1s ease forwards;
-        }
-
-        .intro-logo-wrap {
-            width: 170px;
-            height: 170px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.12);
-            border: 1px solid rgba(255,255,255,.28);
-            backdrop-filter: blur(14px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow:
-                0 0 0 12px rgba(255,255,255,.035),
-                0 25px 80px rgba(0,0,0,.28);
-        }
-
-        .intro-logo {
-            width: 130px;
-            height: 130px;
-            object-fit: contain;
-            filter: drop-shadow(0 15px 20px rgba(0,0,0,.2));
-        }
-
-        .intro h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        .intro p {
-            font-size: 15px;
-            color: rgba(255,255,255,.78);
-        }
-
-        .intro-line {
-            width: 55px;
-            height: 4px;
-            border-radius: 20px;
-            background: linear-gradient(90deg, var(--cyan), #fff);
-            margin: 20px auto;
-        }
-
-        @keyframes introIn {
-            from {
-                opacity: 0;
-                transform: translateY(25px) scale(.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
-
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            z-index: 5000;
-            padding: 16px 0;
-            transition: .3s ease;
-        }
-
-        header.scrolled {
-            padding: 9px 0;
-        }
-
-        .header-inner {
-            height: 70px;
-            padding: 0 18px;
-            border-radius: 20px;
-            background: rgba(255,255,255,.88);
-            border: 1px solid rgba(255,255,255,.75);
-            box-shadow: 0 12px 40px rgba(4,54,107,.10);
-            backdrop-filter: blur(18px);
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: max-content;
-        }
-
-        .brand-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
-
-        .brand-text strong {
-            display: block;
-            color: var(--blue-dark);
-            font-size: 17px;
-            font-weight: 900;
-            line-height: 1.2;
-        }
-
-        .brand-text span {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            margin-top: 3px;
-        }
-
-        /* Desktop nav */
-
-        .desktop-nav {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .nav-link {
-            position: relative;
-            height: 44px;
-            padding: 0 13px;
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            color: #637187;
-            font-size: 12px;
-            font-weight: 700;
-            transition: .25s ease;
-        }
-
-        .nav-link i {
-            font-size: 13px;
-        }
-
-        .nav-link:hover {
-            color: var(--blue);
-            background: #edf6ff;
-        }
-
-        .nav-link.active {
-            color: white;
-            background: linear-gradient(135deg, var(--blue), var(--blue-light));
-            box-shadow: 0 7px 20px rgba(7,87,168,.22);
-        }
-
-        /* Mobile menu button */
-
-        .menu-btn {
-            display: none;
-            width: 45px;
-            height: 45px;
-            border: 0;
-            border-radius: 13px;
-            background: #edf6ff;
-            color: var(--blue);
-            font-size: 19px;
-            cursor: pointer;
-        }
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
+            width: 100%;
+            max-width: 412px;
             min-height: 100vh;
-            padding-top: 130px;
-            padding-bottom: 70px;
-
-            background:
-                radial-gradient(circle at 15% 25%, rgba(8,191,232,.10), transparent 30%),
-                radial-gradient(circle at 85% 20%, rgba(230,57,70,.07), transparent 28%),
-                linear-gradient(180deg, #ffffff, #f4f8fc);
-        }
-
-        .hero-grid {
-            min-height: calc(100vh - 160px);
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .hero-content {
-            animation: fadeUp .8s ease both;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 13px;
-            border-radius: 30px;
-            background: #eaf5ff;
-            color: var(--blue);
-            font-size: 11px;
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-
-        .eyebrow-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--red);
-            box-shadow: 0 0 0 5px rgba(230,57,70,.10);
-        }
-
-        .hero h2 {
-            color: var(--dark);
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
-            font-weight: 900;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 span {
-            color: var(--blue);
-        }
-
-        .hero-description {
-            max-width: 600px;
-            color: #68788d;
-            font-size: 15px;
-            line-height: 2;
-            margin-bottom: 28px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn {
-            min-height: 50px;
-            padding: 0 20px;
-            border-radius: 15px;
-            border: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            font-size: 13px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: .25s ease;
-        }
-
-        .btn-primary {
-            color: white;
-            background: linear-gradient(135deg, var(--blue), var(--blue-light));
-            box-shadow: 0 12px 25px rgba(7,87,168,.20);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 17px 30px rgba(7,87,168,.28);
-        }
-
-        .btn-light {
-            color: var(--blue-dark);
-            background: white;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-light:hover {
-            transform: translateY(-3px);
-            border-color: rgba(7,87,168,.2);
-        }
-
-        .hero-logo-area {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #ffffff;
             position: relative;
-        }
-
-        .hero-logo-bg {
-            width: min(430px, 80vw);
-            height: min(430px, 80vw);
-            border-radius: 50%;
-            background:
-                radial-gradient(circle, rgba(22,136,232,.14), rgba(22,136,232,.04) 52%, transparent 53%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-logo-bg::before {
-            content: "";
-            position: absolute;
-            inset: 24px;
-            border: 1px dashed rgba(7,87,168,.16);
-            border-radius: 50%;
-            animation: spin 35s linear infinite;
-        }
-
-        .hero-logo-bg::after {
-            content: "";
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: var(--red);
-            border-radius: 50%;
-            top: 45px;
-            right: 50px;
-            box-shadow: 0 0 0 9px rgba(230,57,70,.09);
-        }
-
-        .hero-logo {
-            width: 285px;
-            height: 285px;
-            object-fit: contain;
-            z-index: 2;
-            filter: drop-shadow(0 25px 30px rgba(4,54,107,.18));
-            animation: floating 4s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* =====================================================
-           STATS
-        ===================================================== */
-
-        .stats {
-            margin-top: -15px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .stat-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 23px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: .25s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-icon {
-            width: 42px;
-            height: 42px;
-            margin: 0 auto 12px;
-            border-radius: 13px;
-            background: #edf6ff;
-            color: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .stat-number {
-            color: var(--dark);
-            font-size: 26px;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--muted);
-            font-size: 11px;
-            margin-top: 8px;
-        }
-
-        /* =====================================================
-           GENERAL SECTION
-        ===================================================== */
-
-        section {
-            padding: 100px 0;
-            scroll-margin-top: 100px;
-        }
-
-        .section-head {
-            margin-bottom: 40px;
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .section-title {
-            color: var(--dark);
-            font-size: clamp(27px, 4vw, 40px);
-            font-weight: 900;
-            line-height: 1.25;
-        }
-
-        .section-title span {
-            color: var(--blue);
-        }
-
-        .section-subtitle {
-            max-width: 570px;
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 2;
-            margin-top: 10px;
-        }
-
-        .section-tag {
-            display: inline-block;
-            color: var(--blue);
-            background: #eaf5ff;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        /* =====================================================
-           ABOUT
-        ===================================================== */
-
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: .9fr 1.1fr;
-            gap: 55px;
-            align-items: center;
-        }
-
-        .about-card {
-            position: relative;
-            min-height: 410px;
-            border-radius: 30px;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at center, rgba(22,136,232,.12), transparent 55%),
-                #f2f8ff;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-card img {
-            width: 250px;
-            height: 250px;
-            object-fit: contain;
-            filter: drop-shadow(0 25px 25px rgba(4,54,107,.18));
-        }
-
-        .about-badge {
-            position: absolute;
-            bottom: 25px;
-            right: 25px;
-            left: 25px;
-            padding: 16px;
-            border-radius: 18px;
-            background: rgba(255,255,255,.88);
-            backdrop-filter: blur(15px);
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-badge-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 13px;
-            background: var(--blue);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-badge strong {
-            display: block;
-            color: var(--dark);
-            font-size: 13px;
-        }
-
-        .about-badge span {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            margin-top: 3px;
-        }
-
-        .about-text p {
-            color: #65758a;
-            font-size: 14px;
-            line-height: 2.15;
-            margin-bottom: 16px;
-        }
-
-        .info-list {
-            display: grid;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            flex: 0 0 40px;
-            border-radius: 12px;
-            background: #edf6ff;
-            color: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .info-item strong {
-            display: block;
-            color: var(--dark);
-            font-size: 12px;
-        }
-
-        .info-item span {
-            display: block;
-            color: var(--muted);
-            font-size: 11px;
-            margin-top: 2px;
-        }
-
-        /* =====================================================
-           HISTORY / ROLE
-        ===================================================== */
-
-        .history-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .history-card {
-            padding: 30px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .history-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 15px;
-            background: #edf6ff;
-            color: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            font-size: 18px;
-        }
-
-        .history-card h3 {
-            color: var(--dark);
-            font-size: 18px;
-            margin-bottom: 13px;
-        }
-
-        .history-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 2;
-        }
-
-        /* =====================================================
-           ACHIEVEMENTS
-        ===================================================== */
-
-        .achievements {
-            background:
-                linear-gradient(135deg, #031b36, #0757a8);
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .achievements::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,.08);
-            top: -220px;
-            left: -120px;
-        }
-
-        .achievements .section-title {
-            color: white;
-        }
-
-        .achievements .section-title span {
-            color: #69dfff;
-        }
-
-        .achievements .section-subtitle {
-            color: rgba(255,255,255,.68);
-        }
-
-        .achievement-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .achievement-card {
-            position: relative;
-            padding: 30px;
-            min-height: 210px;
-            border: 1px solid rgba(255,255,255,.10);
-            background: rgba(255,255,255,.07);
-            border-radius: 24px;
-            backdrop-filter: blur(10px);
-            transition: .25s ease;
-        }
-
-        .achievement-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,.10);
-        }
-
-        .achievement-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
-            background: rgba(255,255,255,.12);
-            color: #73e2ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 22px;
-        }
-
-        .achievement-card h3 {
-            font-size: 17px;
-            margin-bottom: 9px;
-        }
-
-        .achievement-card p {
-            color: rgba(255,255,255,.65);
-            font-size: 12px;
-            line-height: 1.9;
-        }
-
-        .achievement-number {
-            position: absolute;
-            left: 22px;
-            top: 20px;
-            font-size: 30px;
-            font-weight: 900;
-            color: rgba(255,255,255,.08);
-        }
-
-        /* =====================================================
-           PLAYERS
-        ===================================================== */
-
-        .players {
-            background: #f5f9fd;
-        }
-
-        .players-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .player-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(4,54,107,.07);
-            transition: .3s ease;
-        }
-
-        .player-card:hover {
-            transform: translateY(-7px);
-            box-shadow: var(--shadow);
-        }
-
-        .player-photo {
-            height: 245px;
-            background:
-                radial-gradient(circle at 50% 30%, rgba(22,136,232,.16), transparent 50%),
-                #eef5fb;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .player-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .player-number {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            width: 42px;
-            height: 42px;
-            border-radius: 13px;
-            background: rgba(7,87,168,.92);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            font-weight: 900;
-        }
-
-        .player-body {
-            padding: 17px;
-        }
-
-        .player-name {
-            color: var(--dark);
-            font-size: 14px;
-            font-weight: 900;
-        }
-
-        .player-role {
-            color: var(--muted);
-            font-size: 10px;
-            margin-top: 5px;
-        }
-
-        .players-more {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        /* =====================================================
-           COACH
-        ===================================================== */
-
-        .coach-box {
-            background: white;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            border-radius: 30px;
-            padding: 35px;
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            align-items: center;
-            gap: 35px;
-        }
-
-        .coach-photo {
-            width: 190px;
-            height: 190px;
-            border-radius: 25px;
-            overflow: hidden;
-            background: #edf5fb;
-        }
-
-        .coach-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .coach-info small {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 20px;
-            background: #eaf5ff;
-            color: var(--blue);
-            font-size: 10px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .coach-info h3 {
-            color: var(--dark);
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-
-        .coach-info p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 2;
-        }
-
-        /* =====================================================
-           GALLERY PLACEHOLDER
-        ===================================================== */
-
-        .gallery {
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            grid-auto-rows: 190px;
-            gap: 14px;
-        }
-
-        .gallery-item {
-            border-radius: 20px;
-            border: 1px dashed rgba(7,87,168,.22);
-            background:
-                linear-gradient(135deg, #f4f9fd, #edf5fb);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: #8a9aab;
+            padding: 35px 20px 180px;
+        }
+
+        /* الشعارات */
+        .logos {
+            width: 100%;
+            max-width: 480px;
+            margin-bottom: 25px;
+        }
+
+        .logos img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* كتلة العناوين */
+        .title-block {
             text-align: center;
+            margin-bottom: 26px;
+            width: 100%;
         }
 
-        .gallery-item:first-child {
-            grid-row: span 2;
+        .title-block h2 {
+            color: #0b1a78;
+            font-size: clamp(14.5px, 4.3vw, 16.5px);
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
         }
 
-        .gallery-item i {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: var(--blue);
-            opacity: .55;
+        /* نموذج الإدخال */
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .gallery-item span {
-            font-size: 11px;
-        }
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
-
-        .contact {
-            background: #f5f9fd;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .contact-card {
-            background: white;
-            border: 1px solid var(--border);
+        .input-field {
+            width: 84%;
+            max-width: 300px;
+            height: 46px;
+            border: 1.5px solid #d4d8e2;
             border-radius: 25px;
-            padding: 30px;
-            box-shadow: var(--shadow);
+            background: #ffffff;
+            text-align: center;
+            color: #0b1a78;
+            font-size: 15.5px;
+            font-family: inherit;
+            outline: none;
+            margin-bottom: 14px;
+            transition: all 0.25s ease;
         }
 
-        .contact-card h3 {
-            color: var(--dark);
-            font-size: 20px;
+        .input-field::placeholder {
+            color: #4d5f82;
+            font-size: 15.5px;
+            opacity: 1;
+        }
+
+        select.input-field {
+            cursor: pointer;
+            text-align-last: center;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%234d5f82'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 16px center;
+        }
+
+        .input-field:focus {
+            border-color: #0000d6;
+        }
+
+        /* حقل التخصص العلمي المتفرع */
+        #scientificBranchGroup {
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* زر الاستعلام */
+        .submit-btn {
+            width: 84%;
+            max-width: 300px;
+            height: 46px;
+            border: none;
+            border-radius: 25px;
+            background-color: #0000d6;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            margin-top: 10px;
+            transition: transform 0.1s, opacity 0.1s;
+        }
+
+        .submit-btn:disabled {
+            background-color: #7b8ebd;
+            cursor: not-allowed;
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+
+        /* مؤشر جاري الاستعلام */
+        .loading-box {
+            display: none;
+            margin-top: 22px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .spinner {
+            width: 34px;
+            height: 34px;
+            border: 3.5px solid #e2e8f5;
+            border-top: 3.5px solid #0000d6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-box p {
+            color: #0b1a78;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* بطاقة النتيجة */
+        .result-card {
+            display: none;
+            width: 90%;
+            max-width: 330px;
+            background: #ffffff;
+            border: 1.5px solid #d8e0f0;
+            border-radius: 18px;
+            padding: 16px;
+            margin-top: 25px;
+            box-shadow: 0 5px 18px rgba(11, 26, 120, 0.07);
+            animation: slideDown 0.35s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .student-header {
+            text-align: center;
+            border-bottom: 1.5px dashed #dce2f0;
+            padding-bottom: 10px;
+            margin-bottom: 11px;
+        }
+
+        .student-header .student-name {
+            color: #0b1a78;
+            font-size: 15.5px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .student-header .student-meta {
+            color: #5d7092;
+            font-size: 13px;
+        }
+
+        /* جدول المواد */
+        .subjects-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-bottom: 12px;
         }
 
-        .contact-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 2;
+        .subjects-table th, .subjects-table td {
+            padding: 7px 8px;
+            font-size: 13.5px;
+            text-align: right;
         }
 
-        .location-box {
-            margin-top: 20px;
-            display: flex;
-            gap: 13px;
-            padding: 16px;
-            border-radius: 17px;
-            background: #f3f8fd;
+        .subjects-table th {
+            color: #556a8e;
+            font-weight: 600;
+            border-bottom: 1px solid #eaeff8;
         }
 
-        .location-icon {
-            width: 42px;
-            height: 42px;
-            flex: 0 0 42px;
-            border-radius: 13px;
-            background: var(--blue);
-            color: white;
+        .subjects-table th:last-child, .subjects-table td:last-child {
+            text-align: left;
+        }
+
+        .subjects-table td {
+            color: #0b1a78;
+            border-bottom: 1px solid #f2f5fb;
+            font-weight: 500;
+        }
+
+        .subjects-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fail-grade {
+            color: #d61515 !important;
+        }
+
+        /* شريط المجموع والنسبة */
+        .summary-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 9px 12px;
             display: flex;
+            justify-content: space-around;
             align-items: center;
-            justify-content: center;
         }
 
-        .location-box strong {
-            display: block;
-            color: var(--dark);
-            font-size: 12px;
-        }
-
-        .location-box span {
-            display: block;
-            color: var(--muted);
-            font-size: 11px;
-            line-height: 1.8;
-            margin-top: 3px;
-        }
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            background: #03182f;
-            color: white;
-            padding: 50px 0 100px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
-
-        .footer-brand strong {
-            font-size: 17px;
-        }
-
-        .footer-about {
-            color: rgba(255,255,255,.55);
-            font-size: 12px;
-            line-height: 2;
-            max-width: 430px;
-        }
-
-        .footer-title {
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .footer-links {
-            display: grid;
-            gap: 9px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,.55);
-            font-size: 11px;
-            transition: .2s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.08);
-            color: rgba(255,255,255,.38);
-            font-size: 10px;
+        .summary-box .col {
             text-align: center;
         }
 
-        /* =====================================================
-           MOBILE BOTTOM NAV
-        ===================================================== */
+        .summary-box .col span {
+            display: block;
+            font-size: 11.5px;
+            color: #5d7092;
+            margin-bottom: 1px;
+        }
 
-        .mobile-nav {
+        .summary-box .col strong {
+            font-size: 14.5px;
+            color: #0000d6;
+            font-weight: 700;
+        }
+
+        .status-pass {
+            color: #009c3e !important;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .status-fail {
+            color: #d61515 !important;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* رسائل الخطأ للتحقق */
+        .error-msg {
+            color: #d61515;
+            font-size: 12.5px;
+            font-weight: 600;
+            margin-top: -8px;
+            margin-bottom: 10px;
             display: none;
+            text-align: center;
         }
 
-        /* =====================================================
-           REVEAL
-        ===================================================== */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: .7s ease;
+        /* الأشكال الزخرفية السفلية SVG */
+        .bottom-graphics {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 155px;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 1000px) {
-
-            .desktop-nav {
-                display: none;
-            }
-
-            .menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content {
-                order: 2;
-            }
-
-            .hero-logo-area {
-                order: 1;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .history-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .achievement-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .players-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .coach-box {
-                grid-template-columns: 160px 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gallery-item:first-child {
-                grid-row: span 1;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            body {
-                padding-bottom: 75px;
-            }
-
-            header {
-                padding: 10px 0;
-            }
-
-            .header-inner {
-                height: 62px;
-                padding: 0 12px;
-                border-radius: 17px;
-            }
-
-            .brand-logo {
-                width: 42px;
-                height: 42px;
-            }
-
-            .brand-text strong {
-                font-size: 14px;
-            }
-
-            .brand-text span {
-                font-size: 8px;
-            }
-
-            .hero {
-                padding-top: 105px;
-                padding-bottom: 55px;
-            }
-
-            .hero-grid {
-                min-height: auto;
-                gap: 25px;
-            }
-
-            .hero-logo-bg {
-                width: 270px;
-                height: 270px;
-            }
-
-            .hero-logo {
-                width: 190px;
-                height: 190px;
-            }
-
-            .hero h2 {
-                font-size: 43px;
-                letter-spacing: -1px;
-            }
-
-            .hero-description {
-                font-size: 12px;
-            }
-
-            section {
-                padding: 70px 0;
-                scroll-margin-top: 80px;
-            }
-
-            .section-head {
-                display: block;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .stats-grid {
-                gap: 9px;
-            }
-
-            .stat-card {
-                padding: 18px 10px;
-            }
-
-            .stat-number {
-                font-size: 22px;
-            }
-
-            .stat-label {
-                font-size: 9px;
-            }
-
-            .about-card {
-                min-height: 330px;
-            }
-
-            .about-card img {
-                width: 190px;
-                height: 190px;
-            }
-
-            .achievement-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .players-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .player-photo {
-                height: 205px;
-            }
-
-            .player-body {
-                padding: 13px;
-            }
-
-            .player-name {
-                font-size: 12px;
-            }
-
-            .coach-box {
-                grid-template-columns: 1fr;
-                text-align: center;
-                justify-items: center;
-            }
-
-            .coach-photo {
-                width: 160px;
-                height: 160px;
-            }
-
-            .coach-info h3 {
-                font-size: 23px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-auto-rows: 150px;
-            }
-
-            .gallery-item i {
-                font-size: 22px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            /* Bottom navigation */
-
-            .mobile-nav {
-                position: fixed;
-                z-index: 6000;
-                bottom: 10px;
-                right: 10px;
-                left: 10px;
-                height: 64px;
-                border-radius: 20px;
-                background: rgba(255,255,255,.94);
-                backdrop-filter: blur(18px);
-                border: 1px solid rgba(7,87,168,.10);
-                box-shadow: 0 15px 45px rgba(4,54,107,.20);
-
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                align-items: center;
-                padding: 5px;
-            }
-
-            .mobile-nav a {
-                height: 54px;
-                border-radius: 16px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 3px;
-                color: #7a8798;
-                font-size: 9px;
-                font-weight: 700;
-                transition: .2s;
-            }
-
-            .mobile-nav a i {
-                font-size: 17px;
-            }
-
-            .mobile-nav a.active {
-                background: linear-gradient(135deg, var(--blue), var(--blue-light));
-                color: white;
-                box-shadow: 0 7px 18px rgba(7,87,168,.22);
-            }
-
-            .mobile-nav a.active i {
-                transform: translateY(-1px);
-            }
-
-            .container {
-                width: min(100% - 24px, 1180px);
-            }
+        .bottom-graphics svg {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
     </style>
 </head>
+<body>
 
-<body class="locked">
+<div class="container">
 
-    <!-- =====================================================
-         INTRO SCREEN
-    ===================================================== -->
-
-    <div class="intro" id="intro">
-
-        <div class="intro-content">
-
-            <div class="intro-logo-wrap">
-                <img
-                    class="intro-logo"
-                    src="https://i.ibb.co/NghVqW0R/20260824-054355.png"
-                    alt="شعار نادي الدوم">
-            </div>
-
-            <h1>نادي الدوم</h1>
-
-            <div class="intro-line"></div>
-
-            <p>مرحباً بك في الموقع الرسمي لنادي الدوم</p>
-
-        </div>
-
+    <!-- الشعارات -->
+    <div class="logos">
+        <img src="https://i.ibb.co/yBdwBRvQ/logos-1.png" alt="شعارات سوداني ووزارة التربية">
     </div>
 
+    <!-- العناوين -->
+    <div class="title-block">
+        <h2>جمهورية السودان</h2>
+        <h2>وزارة التربية و التعليم</h2>
+        <h2>نتيجة الشهادة السودانية</h2>
+        <h2>لعام 2026</h2>
+    </div>
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
+    <!-- نموذج إدخال البيانات -->
+    <form class="form" id="searchForm">
+        <!-- رقم الجلوس: أرقام إنجليزية فقط حصراً -->
+        <input 
+            class="input-field" 
+            type="text" 
+            id="seatInput"
+            placeholder="رقم الجلوس" 
+            inputmode="numeric" 
+            autocomplete="off"
+            required
+        >
+        <div class="error-msg" id="seatError">الرجاء إدخال رقم جلوس صحيح (أرقام إنجليزية فقط)</div>
 
-    <header id="header">
+        <!-- الاسم رباعي -->
+        <input 
+            class="input-field" 
+            type="text" 
+            id="nameInput"
+            placeholder="الاسم رباعي بالكامل" 
+            autocomplete="off"
+            required
+        >
+        <div class="error-msg" id="nameError">يجب كتابة الاسم رباعياً بالكامل (4 أسماء على الأقل)</div>
 
-        <div class="container">
+        <!-- اختيار المساق -->
+        <select class="input-field" id="trackSelect" required>
+            <option value="" disabled selected>اختر الميثاق الدراسي</option>
+            <option value="adabi">الميثاق الأدبي</option>
+            <option value="elmi">الميثاق العلمي</option>
+        </select>
 
-            <div class="header-inner">
-
-                <a href="#home" class="brand">
-
-                    <img
-                        class="brand-logo"
-                        src="https://i.ibb.co/NghVqW0R/20260824-054355.png"
-                        alt="نادي الدوم">
-
-                    <div class="brand-text">
-                        <strong>نادي الدوم</strong>
-                        <span>الرياضي الثقافي</span>
-                    </div>
-
-                </a>
-
-
-                <!-- Desktop navigation -->
-
-                <nav class="desktop-nav">
-
-                    <a href="#home" class="nav-link active">
-                        <i class="fa-solid fa-house"></i>
-                        <span>الرئيسية</span>
-                    </a>
-
-                    <a href="#about" class="nav-link">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <span>عن النادي</span>
-                    </a>
-
-                    <a href="#history" class="nav-link">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                        <span>التاريخ</span>
-                    </a>
-
-                    <a href="#achievements" class="nav-link">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span>الإنجازات</span>
-                    </a>
-
-                    <a href="#players" class="nav-link">
-                        <i class="fa-solid fa-users"></i>
-                        <span>اللاعبون</span>
-                    </a>
-
-                    <a href="#gallery" class="nav-link">
-                        <i class="fa-solid fa-images"></i>
-                        <span>المعرض</span>
-                    </a>
-
-                    <a href="#contact" class="nav-link">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>الموقع</span>
-                    </a>
-
-                </nav>
-
-
-                <button class="menu-btn" id="topMenu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-            </div>
-
+        <!-- نافذة التخصص العلمي -->
+        <div id="scientificBranchGroup">
+            <select class="input-field" id="branchSelect">
+                <option value="" disabled selected>اختر التخصص العلمي</option>
+                <option value="bio">علمي أحياء</option>
+                <option value="cs">علمي حاسوب</option>
+                <option value="eng">علمي هندسي</option>
+            </select>
         </div>
 
-    </header>
+        <!-- زر الاستعلام (بدون قسم السعر والضريبة) -->
+        <button type="submit" class="submit-btn" id="submitBtn">استعلام عن النتيجة</button>
+    </form>
 
+    <!-- مؤشر جاري التحميل -->
+    <div class="loading-box" id="loadingBox">
+        <div class="spinner"></div>
+        <p>جاري الاستعلام عن نتيجتك واستخراج الدرجات...</p>
+    </div>
 
-    <!-- =====================================================
-         HERO
-    ===================================================== -->
-
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="container">
-
-                <div class="hero-grid">
-
-                    <div class="hero-content">
-
-                        <div class="eyebrow">
-                            <span class="eyebrow-dot"></span>
-                            الموقع الرسمي لنادي الدوم
-                        </div>
-
-                        <h2>
-                            نادي<br>
-                            <span>الدوم</span>
-                        </h2>
-
-                        <p class="hero-description">
-                            نادي الدوم الرياضي الثقافي، أحد الأندية الرياضية
-                            العريقة في منطقة شرق النيل بالولاية الشمالية،
-                            وصاحب قاعدة جماهيرية عريضة وتاريخ حافل بالبطولات.
-                        </p>
-
-                        <div class="hero-buttons">
-
-                            <a href="#about" class="btn btn-primary">
-                                <i class="fa-solid fa-arrow-down"></i>
-                                اكتشف النادي
-                            </a>
-
-                            <a href="#players" class="btn btn-light">
-                                <i class="fa-solid fa-users"></i>
-                                قائمة اللاعبين
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="hero-logo-area">
-
-                        <div class="hero-logo-bg">
-
-                            <img
-                                class="hero-logo"
-                                src="https://i.ibb.co/NghVqW0R/20260824-054355.png"
-                                alt="شعار نادي الدوم">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+    <!-- بطاقة عرض النتيجة التفاعلية -->
+    <div class="result-card" id="resultCard">
+        <div class="student-header">
+            <div class="student-name" id="cardName">---</div>
+            <div class="student-meta">
+                رقم الجلوس: <span id="cardSeat">---</span> | <span id="cardTrackTitle">---</span>
             </div>
-
-        </section>
-
-
-        <!-- =================================================
-             STATS
-        ================================================= -->
-
-        <div class="stats">
-
-            <div class="container">
-
-                <div class="stats-grid">
-
-                    <div class="stat-card reveal">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-calendar"></i>
-                        </div>
-
-                        <div class="stat-number">1976</div>
-                        <div class="stat-label">عام التأسيس</div>
-
-                    </div>
-
-
-                    <div class="stat-card reveal">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-
-                        <div class="stat-number">28+</div>
-                        <div class="stat-label">كأس محلي</div>
-
-                    </div>
-
-
-                    <div class="stat-card reveal">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-medal"></i>
-                        </div>
-
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">كأس السودان</div>
-
-                    </div>
-
-
-                    <div class="stat-card reveal">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-ranking-star"></i>
-                        </div>
-
-                        <div class="stat-number">2018</div>
-                        <div class="stat-label">الدرجة الأولى</div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
 
+        <!-- جدول المواد الـ 7 -->
+        <table class="subjects-table">
+            <thead>
+                <tr>
+                    <th>المادة</th>
+                    <th>الدرجة</th>
+                </tr>
+            </thead>
+            <tbody id="subjectsBody"></tbody>
+        </table>
 
-        <!-- =================================================
-             ABOUT
-        ================================================= -->
-
-        <section class="about" id="about">
-
-            <div class="container">
-
-                <div class="about-grid">
-
-                    <div class="about-card reveal">
-
-                        <img
-                            src="https://i.ibb.co/NghVqW0R/20260824-054355.png"
-                            alt="شعار نادي الدوم">
-
-                        <div class="about-badge">
-
-                            <div class="about-badge-icon">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
-
-                            <div>
-                                <strong>نادي الدوم الرياضي الثقافي</strong>
-                                <span>تاريخ • جماهير • بطولات • طموح</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-text reveal">
-
-                        <span class="section-tag">من نحن</span>
-
-                        <h2 class="section-title">
-                            أكثر من مجرد <span>نادي</span>
-                        </h2>
-
-                        <p>
-                            تأسس نادي الدوم عام 1976، بعد أن انفصلت منطقة الدوم
-                            إدارياً وجغرافياً عن جارتها حامدنارتي، فسعى شباب الدوم
-                            إلى تأسيس نادٍ رياضي يمثل المنطقة، وقد كان.
-                        </p>
-
-                        <p>
-                            وحالياً النادي مسجل ضمن مؤسسات الشباب والرياضة،
-                            ويتبع للاتحاد المحلي أرقو، ويلعب ضمن أندية الدرجة
-                            الأولى منذ عام 2018 وحتى اليوم.
-                        </p>
-
-                        <p>
-                            ويمتلك النادي قاعدة جماهيرية عريضة، تُعد من أوسع
-                            القواعد الجماهيرية في المنطقة الإدارية شرق النيل.
-                        </p>
-
-
-                        <div class="info-list">
-
-                            <div class="info-item">
-
-                                <div class="info-icon">
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                </div>
-
-                                <div>
-                                    <strong>عام التأسيس</strong>
-                                    <span>1976</span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="info-item">
-
-                                <div class="info-icon">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-
-                                <div>
-                                    <strong>الموقع</strong>
-                                    <span>الشمالية دنقلا – شرق النيل</span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="info-item">
-
-                                <div class="info-icon">
-                                    <i class="fa-solid fa-futbol"></i>
-                                </div>
-
-                                <div>
-                                    <strong>الاتحاد المحلي</strong>
-                                    <span>أرقو – الدرجة الأولى</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <!-- ملخص النتيجة -->
+        <div class="summary-box">
+            <div class="col">
+                <span>المجموع</span>
+                <strong id="cardTotal">0 / 700</strong>
             </div>
-
-        </section>
-
-
-        <!-- =================================================
-             HISTORY
-        ================================================= -->
-
-        <section id="history">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <span class="section-tag">حكاية النادي</span>
-
-                        <h2 class="section-title">
-                            تاريخ بدأ من <span>الشباب</span>
-                        </h2>
-
-                        <p class="section-subtitle">
-                            قصة تأسيس نادي الدوم هي قصة شباب آمنوا بأن منطقتهم
-                            تستحق أن يكون لها كيان رياضي يمثلها.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="history-grid">
-
-                    <div class="history-card reveal">
-
-                        <div class="history-icon">
-                            <i class="fa-solid fa-flag"></i>
-                        </div>
-
-                        <h3>قصة التأسيس</h3>
-
-                        <p>
-                            قبل عام 1976 كانت منطقة الدوم منطقة واحدة مع الجارة
-                            حامدنارتي، وعندما انفصلت المنطقتان إدارياً وجغرافياً،
-                            سعى شباب الدوم لتأسيس نادٍ رياضي، وقد كان ذلك بداية
-                            مسيرة النادي.
-                        </p>
-
-                    </div>
-
-
-                    <div class="history-card reveal">
-
-                        <div class="history-icon">
-                            <i class="fa-solid fa-people-group"></i>
-                        </div>
-
-                        <h3>دور النادي في المجتمع</h3>
-
-                        <p>
-                            يساهم النادي في تعزيز الصحة واللياقة، وتنمية الانضباط
-                            والتعاون والروح الرياضية، واستثمار أوقات الشباب،
-                            وتقوية العلاقات الاجتماعية، واكتشاف المواهب الرياضية
-                            وتعزيز الانتماء للمجتمع.
-                        </p>
-
-                    </div>
-
-
-                    <div class="history-card reveal">
-
-                        <div class="history-icon">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-
-                        <h3>مؤسسة تربوية واجتماعية</h3>
-
-                        <p>
-                            النادي الرياضي ليس مجرد مكان لممارسة الرياضة؛ بل
-                            مؤسسة تربوية واجتماعية وصحية تسهم في بناء الإنسان
-                            وتنمية المجتمع المحيط بها.
-                        </p>
-
-                    </div>
-
-
-                    <div class="history-card reveal">
-
-                        <div class="history-icon">
-                            <i class="fa-solid fa-road"></i>
-                        </div>
-
-                        <h3>مسيرة مستمرة</h3>
-
-                        <p>
-                            منذ التأسيس وحتى اليوم يواصل نادي الدوم مسيرته
-                            الرياضية، حاملاً طموح جماهيره نحو المزيد من
-                            الإنجازات والبطولات.
-                        </p>
-
-                    </div>
-
-                </div>
-
+            <div class="col">
+                <span>النسبة</span>
+                <strong id="cardPercent">0%</strong>
             </div>
-
-        </section>
-
-
-        <!-- =================================================
-             ACHIEVEMENTS
-        ================================================= -->
-
-        <section class="achievements" id="achievements">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <span class="section-tag">إنجازات النادي</span>
-
-                        <h2 class="section-title">
-                            تاريخ من <span>البطولات</span>
-                        </h2>
-
-                        <p class="section-subtitle">
-                            حقق نادي الدوم العديد من البطولات المحلية، ونجح في
-                            الوصول إلى منافسات كأس السودان ممثلاً للاتحاد المحلي أرقو.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="achievement-grid">
-
-                    <div class="achievement-card reveal">
-
-                        <div class="achievement-number">01</div>
-
-                        <div class="achievement-icon">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-
-                        <h3>28 كأساً محلياً</h3>
-
-                        <p>
-                            النادي من أكثر الأندية حيازة للبطولات في المنطقة،
-                            برصيد يقارب 28 كأساً محلياً.
-                        </p>
-
-                    </div>
-
-
-                    <div class="achievement-card reveal">
-
-                        <div class="achievement-number">02</div>
-
-                        <div class="achievement-icon">
-                            <i class="fa-solid fa-medal"></i>
-                        </div>
-
-                        <h3>كأس السودان</h3>
-
-                        <p>
-                            أحرز نادي الدوم بطولة كأس السودان وواصل تمثيل
-                            الاتحاد المحلي أرقو في منافسات كأس السودان.
-                        </p>
-
-                    </div>
-
-
-                    <div class="achievement-card reveal">
-
-                        <div class="achievement-number">03</div>
-
-                        <div class="achievement-icon">
-                            <i class="fa-solid fa-ranking-star"></i>
-                        </div>
-
-                        <h3>الدرجة الأولى</h3>
-
-                        <p>
-                            ضمن أندية الدرجة الأولى بالاتحاد المحلي أرقو منذ
-                            عام 2018 وحتى اليوم.
-                        </p>
-
-                    </div>
-
-                </div>
-
+            <div class="col">
+                <span>النتيجة</span>
+                <span id="cardStatus">--</span>
             </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PLAYERS
-        ================================================= -->
-
-        <section class="players" id="players">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <span class="section-tag">الفريق</span>
-
-                        <h2 class="section-title">
-                            قائمة <span>اللاعبين</span>
-                        </h2>
-
-                        <p class="section-subtitle">
-                            نجوم نادي الدوم للموسم الحالي.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="players-grid" id="playersGrid">
-
-                    <!-- Player 1 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="محى الدين عبدالقادر">
-
-                            <div class="player-number">17</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                محى الدين عبدالقادر
-                            </div>
-
-                            <div class="player-role">
-                                الكور
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 2 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/v4XJ7R3k/IMG-20260907-220009.jpg"
-                                alt="الشازلي عبدالله">
-
-                            <div class="player-number">10</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                الشازلي عبدالله
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 3 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/RGLchFdt/1788810503774-edit-235481926820690.jpg"
-                                alt="خالد حسين هبري">
-
-                            <div class="player-number">22</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                خالد حسين هبري
-                            </div>
-
-                            <div class="player-role">
-                                حارس مرمى
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 4 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/RT7svDgb/IMG-20260907-215831.jpg"
-                                alt="اسامة عبداللطيف">
-
-                            <div class="player-number">3</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                اسامة عبداللطيف
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 5 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/q3nTbVzx/IMG-20260907-221228.jpg"
-                                alt="حازم جمال">
-
-                            <div class="player-number">2</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                حازم جمال
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 6 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="معاذ البدري">
-
-                            <div class="player-number">4</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                معاذ البدري
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 7 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="مجتبى مبارك">
-
-                            <div class="player-number">9</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                مجتبى مبارك
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 8 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="يوسف عبدالله">
-
-                            <div class="player-number">8</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                يوسف عبدالله
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 9 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="عبدالله عبدالحفيظ">
-
-                            <div class="player-number">20</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                عبدالله عبدالحفيظ
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 10 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="عادل عبدالهادي">
-
-                            <div class="player-number">18</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                عادل عبدالهادي
-                            </div>
-
-                            <div class="player-role">
-                                دسكوو
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 11 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="وليد ذكريا">
-
-                            <div class="player-number">7</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                وليد ذكريا
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 12 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="احمد صالح احمد">
-
-                            <div class="player-number">5</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                احمد صالح احمد
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 13 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/7xKYnSFP/IMG-20260907-221205.jpg"
-                                alt="محمد اسامة">
-
-                            <div class="player-number">12</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                محمد اسامة
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Player 14 -->
-
-                    <article class="player-card reveal">
-
-                        <div class="player-photo">
-
-                            <img
-                                src="https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg"
-                                alt="احمد عبدالله علي">
-
-                            <div class="player-number">13</div>
-
-                        </div>
-
-                        <div class="player-body">
-
-                            <div class="player-name">
-                                احمد عبدالله علي
-                            </div>
-
-                            <div class="player-role">
-                                لاعب
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             COACH
-        ================================================= -->
-
-        <section id="coach">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <span class="section-tag">الجهاز الفني</span>
-
-                        <h2 class="section-title">
-                            قيادة <span>الفريق</span>
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="coach-box reveal">
-
-                    <div class="coach-photo">
-
-                        <img
-                            src="https://i.ibb.co/CpknrwKJ/IMG-20260907-221251.jpg"
-                            alt="المدرب زكريا عبيد">
-
-                    </div>
-
-
-                    <div class="coach-info">
-
-                        <small>
-                            <i class="fa-solid fa-user-tie"></i>
-                            المدير الفني
-                        </small>
-
-                        <h3>الكوتش زكريا عبيد</h3>
-
-                        <p>
-                            المدير الفني لنادي الدوم، يقود الفريق بطموح نحو
-                            المنافسة على بطولة دوري الأضواء والتأهل إلى الممتاز
-                            إن شاء الله.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             GALLERY
-        ================================================= -->
-
-        <section class="gallery" id="gallery">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <span class="section-tag">معرض الصور</span>
-
-                        <h2 class="section-title">
-                            لحظات من <span>الدوم</span>
-                        </h2>
-
-                        <p class="section-subtitle">
-                            مساحة مخصصة لإضافة صور النادي واللاعبين والمباريات
-                            والبطولات. يمكنك لاحقاً استبدال هذه الخانات بالصور
-                            الحقيقية للنادي.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery-grid">
-
-                    <div class="gallery-item reveal">
-                        <i class="fa-solid fa-image"></i>
-                        <span>صورة رئيسية للنادي</span>
-                    </div>
-
-                    <div class="gallery-item reveal">
-                        <i class="fa-solid fa-futbol"></i>
-                        <span>المباريات</span>
-                    </div>
-
-                    <div class="gallery-item reveal">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span>البطولات</span>
-                    </div>
-
-                    <div class="gallery-item reveal">
-                        <i class="fa-solid fa-users"></i>
-                        <span>الفريق</span>
-                    </div>
-
-                    <div class="gallery-item reveal">
-                        <i class="fa-solid fa-people-group"></i>
-                        <span>الجماهير</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             CONTACT
-        ================================================= -->
-
-        <section class="contact" id="contact">
-
-            <div class="container">
-
-                <div class="contact-grid">
-
-                    <div class="contact-card reveal">
-
-                        <span class="section-tag">تواصل معنا</span>
-
-                        <h3>نادي الدوم الرياضي الثقافي</h3>
-
-                        <p>
-                            مرحباً بكم في الموقع الرسمي لنادي الدوم.
-                            تابعوا مسيرة النادي وأخباره وإنجازاته ونجومه.
-                        </p>
-
-                        <div class="location-box">
-
-                            <div class="location-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-
-                            <div>
-
-                                <strong>موقع النادي</strong>
-
-                                <span>
-                                    الشمالية دنقلا – شرق النيل<br>
-                                    طريق الأسفلت – حلفا دنقلا<br>
-                                    الكيلو 518
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-card reveal">
-
-                        <span class="section-tag">طموحنا</span>
-
-                        <h3>نحو دوري الأضواء والممتاز</h3>
-
-                        <p>
-                            يطمح نادي الدوم إلى نيل بطولة دوري الأضواء الحالية
-                            وخوض مرحلة التأهيل للممتاز، بإذن الله، بدعم جماهير
-                            النادي وأبناء المنطقة.
-                        </p>
-
-                        <div class="location-box">
-
-                            <div class="location-icon">
-                                <i class="fa-solid fa-arrow-trend-up"></i>
-                            </div>
-
-                            <div>
-
-                                <strong>الهدف القادم</strong>
-
-                                <span>
-                                    المنافسة على لقب دوري الأضواء<br>
-                                    والتأهل إلى الممتاز إن شاء الله
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-grid">
-
-                <div>
-
-                    <div class="footer-brand">
-
-                        <img
-                            src="https://i.ibb.co/NghVqW0R/20260824-054355.png"
-                            alt="نادي الدوم">
-
-                        <strong>نادي الدوم</strong>
-
-                    </div>
-
-                    <p class="footer-about">
-                        نادي الدوم الرياضي الثقافي — منذ عام 1976.
-                        تاريخ رياضي، جماهير وفية، وطموح نحو مستقبل أكبر.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <div class="footer-title">
-                        روابط الموقع
-                    </div>
-
-                    <div class="footer-links">
-
-                        <a href="#home">الرئيسية</a>
-                        <a href="#about">عن النادي</a>
-                        <a href="#history">التاريخ</a>
-                        <a href="#achievements">الإنجازات</a>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <div class="footer-title">
-                        الفريق
-                    </div>
-
-                    <div class="footer-links">
-
-                        <a href="#players">اللاعبون</a>
-                        <a href="#coach">الجهاز الفني</a>
-                        <a href="#gallery">معرض الصور</a>
-                        <a href="#contact">موقع النادي</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © <span id="year"></span>
-                نادي الدوم الرياضي الثقافي — جميع الحقوق محفوظة
-
-            </div>
-
         </div>
+    </div>
 
-    </footer>
+    <!-- الأشكال الزخرفية السفلية SVG -->
+    <div class="bottom-graphics">
+        <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+            <!-- أشكال اليسار -->
+            <polygon points="15,142 165,142 165,160 15,160" fill="#ffd100" />
+            <polygon points="-25,100 42,138 10,165 -45,130" fill="#009c3e" />
+            <polygon points="15,160 130,160 55,140" fill="#009c3e" />
 
+            <!-- أشكال اليمين -->
+            <polygon points="260,25 335,80 285,160 215,160" fill="#ffd100" />
+            <path d="M 270,160 A 130,130 0 0,1 400,35 L 400,85 A 85,85 0 0,0 320,160 Z" fill="#0035a9" />
+        </svg>
+    </div>
 
-    <!-- =====================================================
-         MOBILE NAVIGATION
-    ===================================================== -->
+</div>
 
-    <nav class="mobile-nav" id="mobileNav">
+<script>
+const seatInput = document.getElementById('seatInput');
+const seatError = document.getElementById('seatError');
+const nameInput = document.getElementById('nameInput');
+const nameError = document.getElementById('nameError');
+const trackSelect = document.getElementById('trackSelect');
+const scientificBranchGroup = document.getElementById('scientificBranchGroup');
+const branchSelect = document.getElementById('branchSelect');
+const submitBtn = document.getElementById('submitBtn');
+const loadingBox = document.getElementById('loadingBox');
+const resultCard = document.getElementById('resultCard');
 
-        <a href="#home" class="mobile-link active">
-            <i class="fa-solid fa-house"></i>
-            <span>الرئيسية</span>
-        </a>
+// 1. منع أي مدخلات غير الأرقام الإنجليزية في حقل رقم الجلوس
+seatInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    seatError.style.display = 'none';
+    this.style.borderColor = '#d4d8e2';
+});
 
-        <a href="#about" class="mobile-link">
-            <i class="fa-solid fa-circle-info"></i>
-            <span>النادي</span>
-        </a>
+// إخفاء رسالة خطأ الاسم عند الكتابة
+nameInput.addEventListener('input', function() {
+    nameError.style.display = 'none';
+    this.style.borderColor = '#d4d8e2';
+});
 
-        <a href="#players" class="mobile-link">
-            <i class="fa-solid fa-users"></i>
-            <span>اللاعبون</span>
-        </a>
+// إظهار وإخفاء قائمة التخصص عند اختيار المساق
+trackSelect.addEventListener('change', function() {
+    if (this.value === 'elmi') {
+        scientificBranchGroup.style.display = 'flex';
+        branchSelect.setAttribute('required', 'required');
+    } else {
+        scientificBranchGroup.style.display = 'none';
+        branchSelect.removeAttribute('required');
+        branchSelect.value = "";
+    }
+});
 
-        <a href="#achievements" class="mobile-link">
-            <i class="fa-solid fa-trophy"></i>
-            <span>البطولات</span>
-        </a>
+// خوارزمية عشوائية ثابتة ومبنية حصراً على رقم الجلوس
+function createDeterministicRandom(seed) {
+    let h = 2166136261 >>> 0;
+    const str = String(seed);
+    for (let i = 0; i < str.length; i++) {
+        h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+    }
+    return function() {
+        h += h << 13; h ^= h >>> 7;
+        h += h << 3;  h ^= h >>> 17;
+        h += h << 5;
+        return ((h >>> 0) / 4294967296);
+    };
+}
 
-        <a href="#contact" class="mobile-link">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>الموقع</span>
-        </a>
+// قائمة المواد بحسب المسار
+function getSubjects(track, branch) {
+    if (track === 'adabi') {
+        return [
+            "التربية الإسلامية",
+            "اللغة العربية",
+            "اللغة الإنجليزية",
+            "الرياضيات الأساسية",
+            "التاريخ",
+            "الجغرافيا",
+            "الدراسات الإسلامية"
+        ];
+    } else {
+        let branchName = "الأحياء";
+        if (branch === 'cs') branchName = "علوم الحاسوب";
+        if (branch === 'eng') branchName = "العلوم الهندسية";
 
-    </nav>
+        return [
+            "التربية الإسلامية",
+            "اللغة العربية",
+            "اللغة الإنجليزية",
+            "الرياضيات المتخصصة",
+            "الفيزياء",
+            "الكيمياء",
+            branchName
+        ];
+    }
+}
 
+// توليد درجات واقعية بجميع الاحتمالات (ممتاز، جيد، مقبول، ورسوب)
+function generateRealisticGrades(rng) {
+    const roll = rng();
+    let minG, maxG;
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
+    if (roll < 0.20) {
+        // فئة المتفوقين (امتياز)
+        minG = 80; maxG = 99;
+    } else if (roll < 0.65) {
+        // فئة الجيد والمتوسط
+        minG = 58; maxG = 85;
+    } else if (roll < 0.85) {
+        // فئة المقبول
+        minG = 45; maxG = 65;
+    } else {
+        // فئة الرسوب وتدني الدرجات
+        minG = 26; maxG = 50;
+    }
 
-    <script>
+    const grades = [];
+    for (let i = 0; i < 7; i++) {
+        grades.push(Math.floor(rng() * (maxG - minG + 1)) + minG);
+    }
+    return grades;
+}
 
-        /* ===============================================
-           INTRO
-        =============================================== */
+// معالجة نموذج الاستعلام
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        const intro = document.getElementById("intro");
+    const seat = seatInput.value.trim();
+    const rawName = nameInput.value.trim();
 
-        window.addEventListener("load", () => {
+    // التحقق من رقم الجلوس (أرقام إنجليزية فقط)
+    if (!/^[0-9]+$/.test(seat)) {
+        seatError.style.display = 'block';
+        seatInput.style.borderColor = '#d61515';
+        seatInput.focus();
+        return;
+    }
 
-            setTimeout(() => {
+    // التحقق الصارم من أن الاسم رباعي (4 أسماء على الأقل)
+    const words = rawName.split(/\s+/).filter(w => w.length > 0);
+    if (words.length < 4) {
+        nameError.style.display = 'block';
+        nameInput.style.borderColor = '#d61515';
+        nameInput.focus();
+        return;
+    }
 
-                intro.classList.add("hide");
-                document.body.classList.remove("locked");
+    const track = trackSelect.value;
+    const branch = branchSelect.value;
 
-            }, 2300);
+    if (!track) {
+        alert("الرجاء اختيار الميثاق الدراسي");
+        return;
+    }
+    if (track === 'elmi' && !branch) {
+        alert("الرجاء تحديد التخصص العلمي");
+        return;
+    }
 
-        });
+    // إخفاء بطاقة النتيجة السابقة وبدء شاشة الانتظار
+    resultCard.style.display = 'none';
+    submitBtn.disabled = true;
+    loadingBox.style.display = 'block';
+    loadingBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
+    // محاكاة الاتصال والتحميل (2.5 ثانية)
+    setTimeout(() => {
+        // مفتاح قاعدة البيانات مبني على رقم الجلوس حصراً
+        const storageKey = `student_seat_record_${seat}`;
+        let record = localStorage.getItem(storageKey);
 
-        /* ===============================================
-           HEADER SCROLL
-        =============================================== */
+        let grades = [];
+        let finalTrack = track;
+        let finalBranch = branch;
+        let finalName = rawName;
 
-        const header = document.getElementById("header");
+        if (record) {
+            // إذا تكرر رقم الجلوس: يتم تجاهل الاسم المدخل الجديد واسترجاع النتيجة الأصلية التابعة لرقم الجلوس
+            const parsed = JSON.parse(record);
+            grades = parsed.grades;
+            finalTrack = parsed.track;
+            finalBranch = parsed.branch;
+            finalName = parsed.name; // استرجاع الاسم الأصلي المحفوظ لرقم الجلوس هذا
+        } else {
+            // توليد درجات جديدة وثابتة خاصة برقم الجلوس هذا
+            const rng = createDeterministicRandom(seat);
+            grades = generateRealisticGrades(rng);
 
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 30) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-
-        });
-
-
-        /* ===============================================
-           DESKTOP NAV ACTIVE
-        =============================================== */
-
-        const sections = document.querySelectorAll("main section[id]");
-        const desktopLinks = document.querySelectorAll(".desktop-nav .nav-link");
-        const mobileLinks = document.querySelectorAll(".mobile-nav .mobile-link");
-
-
-        function updateActiveNavigation() {
-
-            let current = "home";
-
-            sections.forEach(section => {
-
-                const sectionTop = section.offsetTop - 180;
-
-                if (window.scrollY >= sectionTop) {
-                    current = section.id;
-                }
-
-            });
-
-
-            desktopLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                const target = link.getAttribute("href");
-
-                if (target === "#" + current) {
-                    link.classList.add("active");
-                }
-
-            });
-
-
-            mobileLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                const target = link.getAttribute("href");
-
-                if (target === "#" + current) {
-                    link.classList.add("active");
-                }
-
-            });
-
+            // حفظ بيانات هذا الطالب ورقم جلوسه لأول مرة
+            localStorage.setItem(storageKey, JSON.stringify({
+                name: rawName,
+                seat: seat,
+                track: track,
+                branch: branch,
+                grades: grades
+            }));
         }
 
+        // جلب أسماء المواد السبعة
+        const subjects = getSubjects(finalTrack, finalBranch);
 
-        window.addEventListener("scroll", updateActiveNavigation);
+        // بناء جدول الدرجات
+        const tbody = document.getElementById('subjectsBody');
+        tbody.innerHTML = '';
+        let total = 0;
+        let failCount = 0;
 
-        updateActiveNavigation();
+        for (let i = 0; i < 7; i++) {
+            total += grades[i];
+            if (grades[i] < 50) failCount++;
 
-
-        /* ===============================================
-           SMOOTH NAVIGATION
-        =============================================== */
-
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-            link.addEventListener("click", function(event) {
-
-                const targetId = this.getAttribute("href");
-
-                if (!targetId || targetId === "#") {
-                    return;
-                }
-
-                const target = document.querySelector(targetId);
-
-                if (!target) {
-                    return;
-                }
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            });
-
-        });
-
-
-        /* ===============================================
-           REVEAL ANIMATION
-        =============================================== */
-
-        const revealElements = document.querySelectorAll(".reveal");
-
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: .10
-            }
-        );
-
-
-        revealElements.forEach(element => {
-
-            observer.observe(element);
-
-        });
-
-
-        /* ===============================================
-           YEAR
-        =============================================== */
-
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-
-
-        /* ===============================================
-           IMAGE FALLBACK
-           إذا فشل رابط صورة لاعب،
-           يتم استخدام الصورة الاحتياطية.
-        =============================================== */
-
-        const fallbackImage =
-            "https://i.ibb.co/N6RXDzPL/1280px-Unknown-person.jpg";
-
-
-        document.querySelectorAll("img").forEach(img => {
-
-            img.addEventListener("error", function() {
-
-                if (this.src !== fallbackImage) {
-                    this.src = fallbackImage;
-                }
-
-            });
-
-        });
-
-
-        /* ===============================================
-           TOP MENU BUTTON
-        =============================================== */
-
-        const topMenu = document.getElementById("topMenu");
-
-        if (topMenu) {
-
-            topMenu.addEventListener("click", () => {
-
-                const players = document.getElementById("players");
-
-                if (players) {
-
-                    players.scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-                }
-
-            });
-
+            const row = document.createElement('tr');
+            const gradeClass = grades[i] < 50 ? 'fail-grade' : '';
+            row.innerHTML = `<td>${subjects[i]}</td><td class="${gradeClass}"><strong>${grades[i]}</strong></td>`;
+            tbody.appendChild(row);
         }
 
-    </script>
+        // حساب النسبة
+        const percentage = ((total / 700) * 100).toFixed(1);
+
+        // اسم المساق والتخصص
+        let trackTitle = "الميثاق الأدبي";
+        if (finalTrack === 'elmi') {
+            if (finalBranch === 'bio') trackTitle = "علمي (أحياء)";
+            else if (finalBranch === 'cs') trackTitle = "علمي (حاسوب)";
+            else if (finalBranch === 'eng') trackTitle = "علمي (هندسي)";
+        }
+
+        // تعبئة بطاقة النتيجة
+        document.getElementById('cardName').textContent = finalName;
+        document.getElementById('cardSeat').textContent = seat;
+        document.getElementById('cardTrackTitle').textContent = trackTitle;
+        document.getElementById('cardTotal').textContent = `${total} / 700`;
+        document.getElementById('cardPercent').textContent = `${percentage}%`;
+
+        // حالة الطالب
+        const statusElem = document.getElementById('cardStatus');
+        if (percentage >= 50 && failCount <= 2) {
+            statusElem.textContent = "ناجح";
+            statusElem.className = "status-pass";
+        } else {
+            statusElem.textContent = "راسب";
+            statusElem.className = "status-fail";
+        }
+
+        // إنهاء التحميل وعرض النتيجة
+        loadingBox.style.display = 'none';
+        submitBtn.disabled = false;
+        resultCard.style.display = 'block';
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    }, 2500);
+});
+</script>
 
 </body>
 </html>
