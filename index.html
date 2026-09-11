@@ -1,1 +1,2018 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b5cff">
+
+<title>نتيجة الشهادة السودانية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Cairo",sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(11,92,255,.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(11,92,255,.06),
+            transparent 28%
+        ),
+        #f6f8fc;
+
+    color:#101828;
+}
+
+.page{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    padding:20px 15px 30px;
+}
+
+.wrapper{
+    width:100%;
+    max-width:500px;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.top-area{
+    position:relative;
+
+    min-height:180px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================================
+   CORNER IMAGES
+========================================= */
+
+.corner-logo{
+    position:absolute;
+
+    width:84px;
+    height:84px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    padding:2px;
+
+    object-fit:cover;
+
+    border:1px solid #fff;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.15);
+
+    z-index:5;
+}
+
+.corner-right{
+    top:0;
+    right:1px;
+}
+
+.corner-left{
+    top:0;
+    left:1px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand-icon{
+    width:64px;
+    height:64px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b5cff,
+            #1748c7
+        );
+
+    box-shadow:
+        0 14px 32px rgba(11,92,255,.20);
+
+    margin-bottom:10px;
+}
+
+.brand-icon svg{
+    width:32px;
+    height:32px;
+
+    stroke:#fff;
+}
+
+.top-area h1{
+    font-size:23px;
+    font-weight:800;
+
+    line-height:1.5;
+}
+
+.top-area p{
+    margin-top:3px;
+
+    color:#7b8495;
+
+    font-size:12px;
+    font-weight:500;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.main-card{
+    background:#fff;
+
+    border:1px solid rgba(15,23,42,.055);
+
+    border-radius:27px;
+
+    padding:24px;
+
+    box-shadow:
+        0 20px 60px rgba(15,23,42,.07),
+        0 3px 12px rgba(15,23,42,.025);
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-head{
+    margin-bottom:21px;
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:6px;
+}
+
+.card-title-icon{
+    width:39px;
+    height:39px;
+
+    border-radius:12px;
+
+    background:#edf4ff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card-title-icon svg{
+    width:19px;
+    height:19px;
+
+    stroke:#0b5cff;
+}
+
+.card-title h2{
+    font-size:16px;
+    font-weight:800;
+}
+
+.card-head p{
+    color:#8791a3;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-label{
+    display:block;
+
+    font-size:13px;
+    font-weight:700;
+
+    color:#344054;
+
+    margin-bottom:8px;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.input-icon{
+    position:absolute;
+
+    right:15px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:22px;
+    height:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    pointer-events:none;
+}
+
+.input-icon svg{
+    width:18px;
+    height:18px;
+
+    stroke:#98a2b3;
+}
+
+#serial{
+    width:100%;
+    height:57px;
+
+    border:1.5px solid #e3e7ef;
+
+    border-radius:15px;
+
+    outline:none;
+
+    background:#fbfcfe;
+
+    padding:0 47px 0 15px;
+
+    font-family:"Cairo",sans-serif;
+
+    font-size:16px;
+    font-weight:600;
+
+    color:#101828;
+
+    direction:ltr;
+    text-align:right;
+
+    transition:.2s;
+}
+
+#serial::placeholder{
+    color:#a8b0bd;
+
+    font-weight:400;
+}
+
+#serial:focus{
+    background:#fff;
+
+    border-color:#0b5cff;
+
+    box-shadow:
+        0 0 0 4px rgba(11,92,255,.08);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.search-btn{
+    width:100%;
+    height:57px;
+
+    margin-top:13px;
+
+    border:0;
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b5cff,
+            #164bd1
+        );
+
+    color:#fff;
+
+    font-family:"Cairo",sans-serif;
+
+    font-size:14px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    box-shadow:
+        0 11px 24px rgba(11,92,255,.18);
+
+    transition:.15s;
+}
+
+.search-btn svg{
+    width:19px;
+    height:19px;
+
+    stroke:#fff;
+}
+
+.search-btn:active{
+    transform:scale(.985);
+}
+
+.search-btn:hover{
+    box-shadow:
+        0 14px 28px rgba(11,92,255,.25);
+}
+
+.search-btn:disabled{
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    box-shadow:none;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message{
+    display:none;
+
+    margin-top:15px;
+
+    padding:13px 14px;
+
+    border-radius:14px;
+
+    font-size:12px;
+    font-weight:600;
+
+    line-height:1.9;
+
+    text-align:center;
+}
+
+.message.show{
+    display:block;
+}
+
+.message.loading{
+    color:#175cd3;
+
+    background:#eff6ff;
+
+    border:1px solid #dbeafe;
+}
+
+.message.success{
+    color:#087443;
+
+    background:#ecfdf3;
+
+    border:1px solid #d1fadf;
+}
+
+.message.error{
+    color:#b42318;
+
+    background:#fff4f2;
+
+    border:1px solid #fee4e2;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-indicator{
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:16px;
+}
+
+.loading-indicator.show{
+    display:flex;
+}
+
+.loading-indicator span{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#0b5cff;
+
+    animation:dot 1.2s infinite ease-in-out;
+}
+
+.loading-indicator span:nth-child(2){
+    animation-delay:.15s;
+}
+
+.loading-indicator span:nth-child(3){
+    animation-delay:.3s;
+}
+
+@keyframes dot{
+
+    0%,80%,100%{
+        transform:scale(.5);
+        opacity:.3;
+    }
+
+    40%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result{
+    display:none;
+
+    margin-top:20px;
+}
+
+.result.show{
+    display:block;
+
+    animation:
+        resultAppear .35s ease;
+}
+
+@keyframes resultAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================================
+   RESULT HEADER
+========================================= */
+
+.result-header{
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f6ff,
+            #f8faff
+        );
+
+    border:1px solid #e5edff;
+
+    text-align:center;
+
+    margin-bottom:10px;
+}
+
+.result-badge{
+    width:40px;
+    height:40px;
+
+    margin:0 auto 8px;
+
+    border-radius:13px;
+
+    background:#e1edff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.result-badge svg{
+    width:20px;
+    height:20px;
+
+    stroke:#0b5cff;
+}
+
+.result-label{
+    color:#8993a4;
+
+    font-size:10px;
+    font-weight:600;
+
+    margin-bottom:4px;
+}
+
+.student-name{
+    font-size:18px;
+
+    line-height:1.8;
+
+    font-weight:800;
+
+    color:#101828;
+
+    word-break:break-word;
+}
+
+
+/* =========================================
+   RESULT GRID
+========================================= */
+
+.result-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:9px;
+}
+
+.result-item{
+    min-height:82px;
+
+    background:#fff;
+
+    border:1px solid #e9edf3;
+
+    border-radius:16px;
+
+    padding:14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.result-item::before{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:0;
+    bottom:0;
+
+    width:3px;
+
+    background:#0b5cff;
+}
+
+.result-item-label{
+    font-size:10px;
+
+    color:#8a94a6;
+
+    font-weight:600;
+
+    margin-bottom:4px;
+}
+
+.result-item-value{
+    font-size:15px;
+
+    color:#101828;
+
+    font-weight:800;
+}
+
+.serial-value{
+    direction:ltr;
+    text-align:right;
+}
+
+
+/* =========================================
+   FOOTER (COMPACT DEVELOPER)
+========================================= */
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+}
+
+.footer-line{
+    width:100%;
+    height:1px;
+    background:#e8ebf0;
+    margin-bottom:12px;
+}
+
+.dev-container{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+}
+
+.dev-title{
+    font-size:11px;
+    color:#8a94a6;
+    font-weight:600;
+}
+
+.dev-title strong{
+    color:#101828;
+    font-weight:800;
+}
+
+.dev-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+}
+
+.dev-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    padding:4px 9px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:10.5px;
+    font-weight:700;
+    transition:.15s ease;
+}
+
+.dev-btn-wa{
+    background:#ecfdf3;
+    color:#087443;
+    border:1px solid #d1fadf;
+}
+
+.dev-btn-wa:hover{
+    background:#dcfce7;
+}
+
+.dev-btn-tg{
+    background:#f0f9ff;
+    color:#0284c7;
+    border:1px solid #e0f2fe;
+}
+
+.dev-btn-tg:hover{
+    background:#e0f2fe;
+}
+
+.dev-btn svg{
+    width:12px;
+    height:12px;
+    fill:currentColor;
+}
+
+.footer-copy{
+    margin-top:8px;
+    color:#a5adba;
+    font-size:9.5px;
+    font-weight:500;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:380px){
+
+    .page{
+        padding:17px 11px 28px;
+    }
+
+    .top-area{
+        min-height:165px;
+    }
+
+    .corner-logo{
+        width:72px;
+        height:72px;
+
+        padding:2px;
+
+        border-width:1px;
+    }
+
+    .corner-right{
+        right:1px;
+    }
+
+    .corner-left{
+        left:1px;
+    }
+
+    .brand-icon{
+        width:58px;
+        height:58px;
+
+        border-radius:18px;
+    }
+
+    .brand-icon svg{
+        width:29px;
+        height:29px;
+    }
+
+    .top-area h1{
+        font-size:21px;
+    }
+
+    .main-card{
+        padding:19px;
+
+        border-radius:23px;
+    }
+
+    .student-name{
+        font-size:17px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+<div class="wrapper">
+
+
+<!-- =========================================
+     TOP
+========================================= -->
+
+<header class="top-area">
+
+
+    <!-- الصورة اليمنى -->
+
+    <img
+        class="corner-logo corner-right"
+        src="https://i.ibb.co/XZ14dfhZ/1772527650263.jpg"
+        alt="">
+
+
+    <!-- الصورة اليسرى -->
+
+    <img
+        class="corner-logo corner-left"
+        src="https://i.ibb.co/PsRrWvX9/1769850583837.jpg"
+        alt="">
+
+
+    <!-- الشعار -->
+
+    <div class="brand-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path d="M3 9.5 12 5l9 4.5-9 4.5L3 9.5Z"/>
+
+            <path d="M6 11.5v4.2c0 1.5 2.7 3.3 6 3.3s6-1.8 6-3.3v-4.2"/>
+
+            <path d="M21 10v5"/>
+
+        </svg>
+
+    </div>
+
+
+    <h1>
+        نتيجة الشهادة السودانية
+    </h1>
+
+
+    <p>
+        الاستعلام عن النتيجة برقم الجلوس
+    </p>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main-card">
+
+
+    <div class="card-head">
+
+        <div class="card-title">
+
+            <div class="card-title-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <circle cx="11" cy="11" r="7"/>
+
+                    <path d="m20 20-4-4"/>
+
+                </svg>
+
+            </div>
+
+
+            <h2>
+                الاستعلام عن النتيجة
+            </h2>
+
+        </div>
+
+
+        <p>
+            أدخل رقم الجلوس الخاص بالطالب للحصول على النتيجة.
+        </p>
+
+    </div>
+
+
+
+    <label
+        class="input-label"
+        for="serial">
+
+        رقم الجلوس
+
+    </label>
+
+
+    <div class="input-wrap">
+
+
+        <div class="input-icon">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <rect
+                    x="3"
+                    y="4"
+                    width="18"
+                    height="16"
+                    rx="3"/>
+
+                <path d="M7 8h10"/>
+
+                <path d="M7 12h2"/>
+
+                <path d="M11 12h2"/>
+
+                <path d="M15 12h2"/>
+
+                <path d="M7 16h2"/>
+
+                <path d="M11 16h2"/>
+
+            </svg>
+
+        </div>
+
+
+        <input
+            id="serial"
+            type="tel"
+            inputmode="numeric"
+            autocomplete="off"
+            maxlength="20"
+            placeholder="أدخل رقم الجلوس">
+
+    </div>
+
+
+
+    <button
+        id="searchBtn"
+        class="search-btn"
+        type="button">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <circle cx="11" cy="11" r="7"/>
+
+            <path d="m20 20-4-4"/>
+
+        </svg>
+
+
+        <span id="buttonText">
+            استعلام عن النتيجة
+        </span>
+
+    </button>
+
+
+
+    <!-- LOADING -->
+
+    <div
+        id="loadingIndicator"
+        class="loading-indicator">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+
+    <!-- MESSAGE -->
+
+    <div
+        id="message"
+        class="message">
+    </div>
+
+
+
+    <!-- RESULT -->
+
+    <section
+        id="result"
+        class="result">
+
+
+        <div class="result-header">
+
+
+            <div class="result-badge">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M20 6 9 17l-5-5"/>
+
+                </svg>
+
+            </div>
+
+
+            <div class="result-label">
+                اسم الطالب
+            </div>
+
+
+            <div
+                id="studentName"
+                class="student-name">
+
+                -
+
+            </div>
+
+        </div>
+
+
+
+        <div class="result-grid">
+
+
+            <div class="result-item">
+
+                <span class="result-item-label">
+                    رقم الجلوس
+                </span>
+
+                <strong
+                    id="studentSerial"
+                    class="result-item-value serial-value">
+
+                    -
+
+                </strong>
+
+            </div>
+
+
+
+            <div class="result-item">
+
+                <span class="result-item-label">
+                    النسبة
+                </span>
+
+                <strong
+                    id="percentage"
+                    class="result-item-value">
+
+                    -
+
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER (COMPACT DEVELOPER)
+========================================= -->
+
+<footer class="footer">
+
+    <div class="footer-line"></div>
+
+    <div class="dev-container">
+
+        <div class="dev-title">
+            تصميم وتطوير: <strong>وجيه مبارك</strong>
+        </div>
+
+        <div class="dev-links">
+
+            <!-- WhatsApp -->
+            <a 
+                href="https://wa.me/249125706514" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="dev-btn dev-btn-wa">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.45 1.03 2.62.13.17 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.47-.6 1.68-1.18.2-.59.2-1.09.14-1.18-.06-.11-.23-.17-.48-.29z"/>
+                </svg>
+
+                <span>واتساب</span>
+            </a>
+
+            <!-- Telegram -->
+            <a 
+                href="https://t.me/suui_7" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="dev-btn dev-btn-tg">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.313 4.672c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.421z"/>
+                </svg>
+
+                <span>تليجرام</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-copy">
+        جميع الحقوق محفوظة © 2026
+    </div>
+
+</footer>
+
+
+</div>
+
+</div>
+
+
+
+<script type="module">
+
+
+/* =========================================
+   FIREBASE
+========================================= */
+
+import {
+    initializeApp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+
+/* =========================================
+   FIREBASE CONFIG
+========================================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "...",
+
+    authDomain:
+        "electricityinitiative-27ac6.firebaseapp.com",
+
+    databaseURL:
+        "https://electricityinitiative-27ac6-default-rtdb.firebaseio.com",
+
+    projectId:
+        "electricityinitiative-27ac6",
+
+    storageBucket:
+        "electricityinitiative-27ac6.firebasestorage.app",
+
+    messagingSenderId:
+        "...",
+
+    appId:
+        "...",
+
+    measurementId:
+        "G-NRFYJXH92H"
+
+};
+
+
+
+let app;
+
+let database;
+
+
+try{
+
+    app =
+        initializeApp(
+            firebaseConfig
+        );
+
+    database =
+        getDatabase(
+            app
+        );
+
+    console.log(
+        "Firebase connected"
+    );
+
+}catch(error){
+
+    console.error(
+        "Firebase initialization error:",
+        error
+    );
+
+}
+
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const serialInput =
+    document.getElementById(
+        "serial"
+    );
+
+
+const searchBtn =
+    document.getElementById(
+        "searchBtn"
+    );
+
+
+const buttonText =
+    document.getElementById(
+        "buttonText"
+    );
+
+
+const messageBox =
+    document.getElementById(
+        "message"
+    );
+
+
+const resultBox =
+    document.getElementById(
+        "result"
+    );
+
+
+const loadingIndicator =
+    document.getElementById(
+        "loadingIndicator"
+    );
+
+
+const studentName =
+    document.getElementById(
+        "studentName"
+    );
+
+
+const studentSerial =
+    document.getElementById(
+        "studentSerial"
+    );
+
+
+const percentage =
+    document.getElementById(
+        "percentage"
+    );
+
+
+
+let currentListener =
+    null;
+
+let timeoutTimer =
+    null;
+
+let countdownTimer =
+    null;
+
+let secondsLeft =
+    60;
+
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+function showMessage(
+    text,
+    type
+){
+
+    messageBox.innerHTML =
+        text;
+
+    messageBox.className =
+        "message show " + type;
+
+}
+
+
+function hideMessage(){
+
+    messageBox.innerHTML =
+        "";
+
+    messageBox.className =
+        "message";
+
+}
+
+
+
+/* =========================================
+   LISTENER
+========================================= */
+
+function stopListener(){
+
+    if(
+        currentListener
+    ){
+
+        currentListener();
+
+        currentListener =
+            null;
+
+    }
+
+}
+
+
+
+/* =========================================
+   TIMERS
+========================================= */
+
+function stopTimers(){
+
+    if(
+        timeoutTimer
+    ){
+
+        clearTimeout(
+            timeoutTimer
+        );
+
+        timeoutTimer =
+            null;
+
+    }
+
+
+    if(
+        countdownTimer
+    ){
+
+        clearInterval(
+            countdownTimer
+        );
+
+        countdownTimer =
+            null;
+
+    }
+
+}
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+function setLoadingState(){
+
+    searchBtn.disabled =
+        true;
+
+    buttonText.textContent =
+        "جاري البحث...";
+
+    loadingIndicator.classList.add(
+        "show"
+    );
+
+}
+
+
+function resetButton(){
+
+    searchBtn.disabled =
+        false;
+
+    buttonText.textContent =
+        "استعلام عن النتيجة";
+
+    loadingIndicator.classList.remove(
+        "show"
+    );
+
+}
+
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+function updateLoadingMessage(){
+
+    showMessage(
+
+        "جاري البحث عن النتيجة...<br>" +
+
+        "يرجى الانتظار " +
+
+        "<b>" +
+
+        secondsLeft +
+
+        "</b> ثانية",
+
+        "loading"
+
+    );
+
+}
+
+
+function startCountdown(){
+
+    secondsLeft =
+        60;
+
+    updateLoadingMessage();
+
+
+    countdownTimer =
+        setInterval(
+
+            function(){
+
+                secondsLeft--;
+
+
+                if(
+                    secondsLeft < 0
+                ){
+
+                    secondsLeft =
+                        0;
+
+                }
+
+
+                updateLoadingMessage();
+
+
+                if(
+                    secondsLeft <= 0
+                ){
+
+                    clearInterval(
+                        countdownTimer
+                    );
+
+                    countdownTimer =
+                        null;
+
+                }
+
+            },
+
+            1000
+
+        );
+
+}
+
+
+
+/* =========================================
+   TIMEOUT
+========================================= */
+
+function startTimeout(){
+
+    timeoutTimer =
+        setTimeout(
+
+            function(){
+
+                stopListener();
+
+                stopTimers();
+
+                resetButton();
+
+
+                showMessage(
+
+                    "انتهت مهلة الانتظار.<br>" +
+                    "يرجى المحاولة مرة أخرى.",
+
+                    "error"
+
+                );
+
+            },
+
+            60000
+
+        );
+
+}
+
+
+
+/* =========================================
+   CREATE REQUEST
+========================================= */
+
+async function createRequest(){
+
+    const serial =
+        serialInput.value.trim();
+
+
+    resultBox.classList.remove(
+        "show"
+    );
+
+    hideMessage();
+
+    stopTimers();
+
+    stopListener();
+
+
+    if(
+        !serial
+    ){
+
+        showMessage(
+            "يرجى إدخال رقم الجلوس.",
+            "error"
+        );
+
+        serialInput.focus();
+
+        return;
+
+    }
+
+
+    if(
+        !/^[0-9]+$/.test(
+            serial
+        )
+    ){
+
+        showMessage(
+            "رقم الجلوس يجب أن يحتوي على أرقام فقط.",
+            "error"
+        );
+
+        serialInput.focus();
+
+        return;
+
+    }
+
+
+    if(
+        !database
+    ){
+
+        showMessage(
+            "تعذر الاتصال بالخدمة حالياً.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    setLoadingState();
+
+
+    try{
+
+        const requestsRef =
+            ref(
+                database,
+                "requests"
+            );
+
+
+        const requestData = {
+
+            serial:
+                serial,
+
+            status:
+                "waiting",
+
+            name:
+                "",
+
+            result:
+                "",
+
+            percentage:
+                "",
+
+            message:
+                "",
+
+            createdAt:
+                Date.now()
+
+        };
+
+
+        const newRequest =
+            await push(
+                requestsRef,
+                requestData
+            );
+
+
+        const requestId =
+            newRequest.key;
+
+
+        if(
+            !requestId
+        ){
+
+            throw new Error(
+                "تعذر إنشاء الطلب."
+            );
+
+        }
+
+
+        startCountdown();
+
+        startTimeout();
+
+        listenToRequest(
+            requestId
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "Firebase ERROR:",
+            error
+        );
+
+
+        stopTimers();
+
+        stopListener();
+
+        resetButton();
+
+
+        showMessage(
+            "حدث خطأ أثناء إرسال الطلب.",
+            "error"
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   LISTEN REQUEST
+========================================= */
+
+function listenToRequest(
+    requestId
+){
+
+    const requestRef =
+        ref(
+            database,
+            "requests/" +
+            requestId
+        );
+
+
+    currentListener =
+        onValue(
+
+            requestRef,
+
+            function(snapshot){
+
+                const data =
+                    snapshot.val();
+
+
+                if(
+                    !data
+                ){
+
+                    stopTimers();
+
+                    stopListener();
+
+                    resetButton();
+
+
+                    showMessage(
+                        "تعذر العثور على الطلب.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if(
+                    data.status ===
+                    "waiting"
+                ){
+
+                    updateLoadingMessage();
+
+                    return;
+
+                }
+
+
+                if(
+                    data.status ===
+                    "processing"
+                ){
+
+                    showMessage(
+
+                        "جاري استخراج النتيجة...<br>" +
+
+                        "يرجى الانتظار " +
+
+                        "<b>" +
+
+                        secondsLeft +
+
+                        "</b> ثانية",
+
+                        "loading"
+
+                    );
+
+                    return;
+
+                }
+
+
+                if(
+                    data.status ===
+                    "error"
+                ){
+
+                    stopTimers();
+
+                    stopListener();
+
+                    resetButton();
+
+
+                    showMessage(
+
+                        data.message ||
+                        "تعذر الحصول على النتيجة.",
+
+                        "error"
+
+                    );
+
+                    return;
+
+                }
+
+
+                if(
+                    data.status ===
+                    "completed"
+                ){
+
+                    stopTimers();
+
+                    stopListener();
+
+
+                    studentName.textContent =
+                        data.name ||
+                        "غير متوفر";
+
+
+                    studentSerial.textContent =
+                        data.serial ||
+                        serial;
+
+
+                    percentage.textContent =
+                        data.percentage ||
+                        "غير متوفرة";
+
+
+                    resultBox.classList.add(
+                        "show"
+                    );
+
+
+                    resetButton();
+
+
+                    showMessage(
+
+                        "تم العثور على النتيجة بنجاح.",
+
+                        "success"
+
+                    );
+
+
+                    setTimeout(
+
+                        function(){
+
+                            resultBox.scrollIntoView({
+
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "nearest"
+
+                            });
+
+                        },
+
+                        100
+
+                    );
+
+                }
+
+            },
+
+
+            function(error){
+
+                console.error(
+                    "Firebase listener error:",
+                    error
+                );
+
+
+                stopTimers();
+
+                stopListener();
+
+                resetButton();
+
+
+                showMessage(
+                    "حدث خطأ أثناء متابعة الطلب.",
+                    "error"
+                );
+
+            }
+
+        );
+
+}
+
+
+
+/* =========================================
+   EVENTS
+========================================= */
+
+searchBtn.addEventListener(
+    "click",
+    createRequest
+);
+
+
+serialInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key ===
+            "Enter"
+        ){
+
+            event.preventDefault();
+
+            createRequest();
+
+        }
+
+    }
+);
+
+
+serialInput.addEventListener(
+    "input",
+    function(){
+
+        this.value =
+            this.value.replace(
+                /[^0-9]/g,
+                ""
+            );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
